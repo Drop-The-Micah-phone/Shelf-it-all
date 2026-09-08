@@ -16,6 +16,15 @@
 			<div><p class="eyebrow">The backroom is yours</p><h2>Turn curious clues into a perfect shelf.</h2><p class="hero-copy">Every delivery is a five-bottle logic puzzle. Decode the set, then place every potion in its correct bay.</p></div>
 			<div class="progress-card"><div class="progress-heading"><span>Apothecary license</span><strong id="score-label">0 stars</strong></div><div class="progress-track"><span id="progress-fill"></span></div><small id="progress-label">First delivery</small></div>
 		</section>
+		<section class="upgrade-bar panel">
+			<div class="player-readout"><p class="eyebrow">Your apprentice</p><strong id="carry-label">Carrying 0 / 6</strong><small id="speed-label">Walking speed I</small></div>
+			<div class="upgrade-actions">
+				<button class="upgrade-button" id="capacity-upgrade" type="button"><b>+2 hands</b><span>Cost: 2 stars</span></button>
+				<button class="upgrade-button" id="speed-upgrade" type="button"><b>Fleet feet</b><span>Cost: 2 stars</span></button>
+				<button class="upgrade-button locked" id="map-button" type="button"><b>Map room</b><span>Unlock: 3 stars</span></button>
+				<button class="upgrade-button locked" id="recall-button" type="button"><b>Recall type</b><span>Unlock: 4 stars</span></button>
+			</div>
+		</section>
 		<section class="game-grid">
 			<aside class="clue-panel panel">
 				<div class="panel-heading"><div><p class="eyebrow">Dispatch note</p><h3 id="order-title">The Dawn Parcel</h3></div><span class="order-badge" id="order-badge">01</span></div>
@@ -25,10 +34,13 @@
 				<button class="primary-button" id="check-button" type="button">Unlock shelf <span>&rarr;</span></button><p class="message" id="game-message" role="status"></p>
 			</aside>
 			<section class="shelf-panel panel">
-				<div class="shelf-heading"><div><p class="eyebrow">Sorting table</p><h3>Arrange the delivery</h3></div><div class="shelf-tools"><span id="bottle-count">5 bottles</span><button class="text-button" id="reset-button" type="button">Reset order</button></div></div>
+				<div class="shelf-heading"><div><p class="eyebrow">Backroom floor</p><h3>Clean up the delivery</h3></div><div class="shelf-tools"><span id="bottle-count">5 bottles</span><button class="text-button" id="reset-button" type="button">Scatter again</button></div></div>
 				<div class="rule-strip"><span class="rule-icon">&#10003;</span><span id="rule-text">Solve the set label to reveal the shelf rule.</span></div>
-				<div class="shelf-frame"><div class="shelf-topline"><span>Left bay</span><span>Right bay</span></div><div class="shelf-slots" id="shelf-slots"></div><div class="shelf-wood"></div></div>
-				<div class="delivery-tray"><div class="tray-heading"><span>Unsorted delivery</span><small>Click a bottle, then click a bay</small></div><div class="bottle-tray" id="bottle-tray"></div></div>
+				<div class="room-scene" id="room-scene">
+					<div class="wall-shelf"><div class="shelf-topline"><span>Left bay</span><span>Right bay</span></div><div class="shelf-slots" id="shelf-slots"></div><div class="shelf-wood"></div></div>
+					<div class="floor-label">Unsorted delivery <small>Drag a bottle onto a shelf bay</small></div>
+					<div class="bottle-tray" id="bottle-tray"></div>
+				</div>
 			</section>
 		</section>
 		<footer class="footer-note"><span>Order carefully. The glass remembers.</span><span id="best-label">Best run: 0 stars</span></footer>
