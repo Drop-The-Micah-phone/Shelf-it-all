@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Shelf It All</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="./potion.css">
 </head>
 <body>
 	<main class="app-shell">
@@ -45,6 +45,12 @@
 		</section>
 		<footer class="footer-note"><span>Order carefully. The glass remembers.</span><span id="best-label">Best run: 0 stars</span></footer>
 	</main>
-	<script src="game.js"></script>
+	<script>
+		window.addEventListener('error', (event) => {
+			const message = document.getElementById('game-message');
+			if (message && event.error) message.textContent = `Game startup error: ${event.error.message}`;
+		});
+	</script>
+	<script src="./potion.js" defer></script>
 </body>
 </html>

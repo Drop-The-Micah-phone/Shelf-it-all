@@ -105,4 +105,11 @@ el('capacity-upgrade').addEventListener('click', () => buyUpgrade('capacity'));
 el('speed-upgrade').addEventListener('click', () => buyUpgrade('speed'));
 el('map-button').addEventListener('click', () => buyUpgrade('map'));
 el('recall-button').addEventListener('click', recallSameType);
-buildOrder();
+function startGame() {
+	try { buildOrder(); } catch (error) {
+		const message = el('game-message');
+		if (message) message.textContent = `Game startup error: ${error.message}`;
+	}
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', startGame, { once:true });
+else startGame();
